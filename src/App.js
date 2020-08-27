@@ -5,19 +5,18 @@ import {
   Input, 
   Row, 
   Col, 
-  Card, 
-  Tag, 
+  Card,  
   Spin, 
   Alert, 
   Modal, 
   Typography 
 } from 'antd';
 import 'antd/dist/antd.css';
+import { SearchMovie } from './components/SearchMovie';
+import { CardMovie } from './components/CardMovie';
 
 const API_KEY = 'cexxxxxxx6';
 const { Header, Content, Footer } = Layout;
-const { Search } = Input;
-const { Meta } = Card;
 const TextTitle = Typography.Title;
 
 
@@ -39,6 +38,12 @@ function App() {
               </Header>
               <Content style={{ padding: '0 50px' }}>
                   <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
+
+                  <SearchMovie />
+                        <br />
+                        <Row gutter={16} type="flex" justify="center">
+                            <CardMovie />
+                        </Row>
                       
                   </div>
               </Content>

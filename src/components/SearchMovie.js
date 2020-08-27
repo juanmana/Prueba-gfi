@@ -1,6 +1,18 @@
 import React from 'react'
-import { Row, Col} from 'antd';
+import { 
+    Layout, 
+    Input, 
+    Row, 
+    Col, 
+    Card,  
+    Spin, 
+    Alert, 
+    Modal, 
+    Typography 
+  } from 'antd';import 'antd/dist/antd.css';
 
+
+const { Search } = Input;
 
 
 
@@ -10,7 +22,7 @@ export const SearchMovie = () => {
         <Row>
         <Col span={12} offset={6}>
             <Search
-                placeholder="enter movie, series, episode name"
+                placeholder="search movie"
                 enterButton="Search"
                 size="large"
                 onSearch={value => console.log(value)}
