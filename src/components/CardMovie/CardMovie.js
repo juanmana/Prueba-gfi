@@ -51,11 +51,13 @@ export const CardMovie = ({
   };
 
 
- const deleteFav=(id)=>{
+ const deleteFav=(imdbID)=>{
 
-  favouriteMovies.splice(id,1);
-  setFavouriteMovies(favouriteMovies);
-  localStorage.setItem(FAV_MOVIE, JSON.stringify(favouriteMovies))
+  const fav = favouriteMovies.filter(elem=>elem != imdbID);
+  localStorage.setItem(FAV_MOVIE, JSON.stringify(fav))
+  setFavouriteMovies(favouriteMovies)
+  setReloadedFav(true)
+
 
  }
 
