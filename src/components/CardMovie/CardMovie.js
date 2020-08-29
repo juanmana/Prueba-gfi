@@ -103,14 +103,14 @@ const favourite = () => {
 { !arr ? (
        
 
-                <Tag><HeartTwoTone twoToneColor="blue" style={{paddingLeft: "20px",paddingRight: "20px"}}onClick={favourite}/>Añadir a favoritos</Tag>
+                <Tag onClick={favourite}><HeartTwoTone twoToneColor="blue" style={{paddingLeft: "20px",paddingRight: "20px"}}/>Añadir a favoritos</Tag>
 
 ):(     ("")
 ) }
 
 { arr ? (
  
-                <Tag> <HeartTwoTone twoToneColor="red" style={{paddingLeft: "20px",paddingRight: "20px"}} onClick={()=>deleteFav(imdbID)}/>Borrar favoritos</Tag>
+                <Tag onClick={()=>deleteFav(imdbID)}> <HeartTwoTone twoToneColor="red" style={{paddingLeft: "20px",paddingRight: "20px"}} />Borrar favoritos</Tag>
 
 ):("")}
       </div>
