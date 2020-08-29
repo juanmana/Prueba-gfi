@@ -34,8 +34,7 @@ export const CardMovie = ({
   };
 
 
-
-  const favourite = () => {
+const favourite = () => {
 
     let favouriteMov = []
 
@@ -53,7 +52,7 @@ export const CardMovie = ({
 
  const deleteFav=(imdbID)=>{
 
-  const fav = favouriteMovies.filter(elem=>elem != imdbID);
+  const fav = favouriteMovies.filter(elem=>elem !== imdbID);
   localStorage.setItem(FAV_MOVIE, JSON.stringify(fav))
   setFavouriteMovies(favouriteMovies)
   setReloadedFav(true)
@@ -63,11 +62,18 @@ export const CardMovie = ({
 
 
 
+ const arr = favouriteMovies.some(x=>x===imdbID)
+
+ console.log(arr)
+
+
+
+
 
   return (
     <Col span={5}>
       <div>
-        <Card
+        <Card style={{maxWidth: "70%", marginBottom: "5px", marginTop: "15px"}}
           cover={
             <img
               alt={Title}
@@ -89,13 +95,21 @@ export const CardMovie = ({
           </Row>
         </Card>
 
-        <button onClick={favourite}>
-                <Tag color="yellow">Fav</Tag>
-              </button>
+       
+
+
+{ !arr ? (
+       
+
+                <Tag style={{paddingLeft: "40px",paddingRight: "40px"}}onClick={favourite} color="green">Añadir a favoritos</Tag>
+
+):( "favorito") }
+
+{ arr ? (
  
-        <button onClick={()=>deleteFav(imdbID)}>
-                <Tag color="yellow">Quitar favoritos</Tag>
-              </button> 
+                <Tag onClick={()=>deleteFav(imdbID)} color="red">Quitar favoritos</Tag>
+
+):("")}
       </div>
     </Col>
   );
