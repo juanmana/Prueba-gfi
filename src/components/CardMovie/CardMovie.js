@@ -47,19 +47,17 @@ export const CardMovie = ({
     favouriteMov.push(imdbID)
     localStorage.setItem(FAV_MOVIE, JSON.stringify(favouriteMov))
     setReloadedFav(true)
+    favouriteMov = []
   };
 
 
-  const deleteFav=()=>{
+ const deleteFav=(id)=>{
 
-    setFavouriteMovies(favouriteMovies);
-    localStorage.removeItem(imdbID);
+  favouriteMovies.splice(id,1);
+  setFavouriteMovies(favouriteMovies);
+  localStorage.setItem(FAV_MOVIE, JSON.stringify(favouriteMovies))
 
-
-    setReloadedFav(true)
-  }
-
-
+ }
 
 
 
@@ -92,10 +90,10 @@ export const CardMovie = ({
         <button onClick={favourite}>
                 <Tag color="yellow">Fav</Tag>
               </button>
-
-        <button onClick={deleteFav}>
+ 
+        <button onClick={()=>deleteFav(imdbID)}>
                 <Tag color="yellow">Quitar favoritos</Tag>
-              </button>
+              </button> 
       </div>
     </Col>
   );
