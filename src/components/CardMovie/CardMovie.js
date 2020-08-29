@@ -1,6 +1,8 @@
 import React from "react";
 import { Row, Col, Card, Tag } from "antd";
 import "antd/dist/antd.css";
+import {  HeartTwoTone,HeartOutlined  } from '@ant-design/icons';
+
 import { API_KEY, FAV_MOVIE } from "../../utils/utils";
 
 const { Meta } = Card;
@@ -96,18 +98,19 @@ const favourite = () => {
         </Card>
 
        
-
+        
 
 { !arr ? (
        
 
-                <Tag style={{paddingLeft: "40px",paddingRight: "40px"}}onClick={favourite} color="green">Añadir a favoritos</Tag>
+                <Tag><HeartTwoTone twoToneColor="blue" style={{paddingLeft: "20px",paddingRight: "20px"}}onClick={favourite}/>Añadir a favoritos</Tag>
 
-):( "favorito") }
+):(     ("")
+) }
 
 { arr ? (
  
-                <Tag onClick={()=>deleteFav(imdbID)} color="red">Quitar favoritos</Tag>
+                <Tag> <HeartTwoTone twoToneColor="red" style={{paddingLeft: "20px",paddingRight: "20px"}} onClick={()=>deleteFav(imdbID)}/>Borrar favoritos</Tag>
 
 ):("")}
       </div>
