@@ -49,7 +49,7 @@ function App() {
     setError(null);
     setData(null);
 
-    fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
+      fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
       .then((resp) => resp)
       .then((resp) => resp.json())
       .then((response) => {

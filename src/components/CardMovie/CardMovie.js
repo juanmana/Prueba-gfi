@@ -1,13 +1,13 @@
 import React from "react";
 import { Row, Col, Card, Tag } from "antd";
 import "antd/dist/antd.css";
-import {  HeartTwoTone,HeartOutlined  } from '@ant-design/icons';
+import {  HeartTwoTone  } from '@ant-design/icons';
 
 import { API_KEY, FAV_MOVIE } from "../../utils/utils";
 
 const { Meta } = Card;
 
-export const CardMovie = ({
+  export  const  CardMovie = ({
   Title,
   imdbID,
   Poster,
@@ -19,11 +19,11 @@ export const CardMovie = ({
   setFavouriteMovies,
   setReloadedFav,
 }) => {
-  const clickHandler = () => {
+   const clickHandler =   () => {
     setModal(true);
     setDetailReq(true);
 
-    fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`)
+        fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`)
       .then((resp) => resp)
       .then((resp) => resp.json())
       .then((response) => {
@@ -64,9 +64,8 @@ const favourite = () => {
 
 
 
- const arr = favouriteMovies.some(x=>x===imdbID)
+ const arr = favouriteMovies && favouriteMovies.some(x=>x===imdbID)
 
- console.log(arr)
 
 
 
