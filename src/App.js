@@ -19,7 +19,7 @@ function App() {
 
 
 
-  const [query, setQuery] = useState("disney");
+  const [query, setQuery] = useState("marvel");
 
 
   const [modal, setModal] = useState(false);
@@ -44,12 +44,13 @@ function App() {
 
 
 
+
   useEffect(() => {
     setLoading(true);
     setError(null);
     setData(null);
 
-      fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
+    fetch(`http://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`)
       .then((resp) => resp)
       .then((resp) => resp.json())
       .then((response) => {

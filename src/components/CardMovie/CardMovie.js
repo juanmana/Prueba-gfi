@@ -7,7 +7,7 @@ import { API_KEY, FAV_MOVIE } from "../../utils/utils";
 
 const { Meta } = Card;
 
-  export  const  CardMovie = ({
+export const CardMovie = ({
   Title,
   imdbID,
   Poster,
@@ -19,11 +19,11 @@ const { Meta } = Card;
   setFavouriteMovies,
   setReloadedFav,
 }) => {
-   const clickHandler =   () => {
+  const clickHandler = () => {
     setModal(true);
     setDetailReq(true);
 
-        fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`)
+    fetch(`http://www.omdbapi.com/?i=${imdbID}&apikey=${API_KEY}`)
       .then((resp) => resp)
       .then((resp) => resp.json())
       .then((response) => {
