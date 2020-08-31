@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Title } from "../../components/Login/Title/Title"
 import { Input } from "../../components/Login/Input/Input";
  import {Label} from '../../components/Login/Label/Label'
+ import { Redirect, Route } from "react-router";
+
+
 import "./Login.css";
 
 export const Login = () => {
@@ -59,8 +62,14 @@ export const Login = () => {
     if (account) {
         
         isMatch(account)
+    
 
     }
+  }
+
+
+  if (isLogin) {
+    return <Redirect to='/home'/>;
   }
 
   return (
