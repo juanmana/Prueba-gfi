@@ -1,6 +1,6 @@
 
 
-Para poder hacer login debes de introducir los sigientes datos :
+Para poder hacer login debes de introducir los siguientes datos :
 
 usuario: juanmartin 
 
