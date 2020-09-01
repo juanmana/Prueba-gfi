@@ -74,7 +74,7 @@ const favourite = () => {
   return (
     <Col span={5}>
       <div>
-        <Card style={{maxWidth: "70%", marginBottom: "5px", marginTop: "15px"}}
+        <Card style={{cursor:"pointer" ,maxWidth: "70%", marginBottom: "5px", marginTop: "15px"}}
           cover={
             <img
               alt={Title}
